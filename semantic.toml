@@ -1,0 +1,423 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `lido` nest on mainnet. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__approval]
+description = "`Approval(address,address,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Approval(address,address,uint256) event"
+
+[table.steth__approval.columns]
+owner = "The `owner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+spender = "The `spender` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+value = "The `value` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__approval.footguns]
+big_ints = ["value"]
+overflows_dec = ["value"]
+
+[table.steth__c_l_balances_updated]
+description = "`CLBalancesUpdated(uint256,uint256,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CLBalancesUpdated(uint256,uint256,uint256) event"
+
+[table.steth__c_l_balances_updated.columns]
+clPendingBalance = "The `clPendingBalance` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+clValidatorsBalance = "The `clValidatorsBalance` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reportTimestamp = "The `reportTimestamp` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__c_l_balances_updated.footguns]
+big_ints = [
+    "reportTimestamp",
+    "clValidatorsBalance",
+    "clPendingBalance",
+]
+overflows_dec = [
+    "reportTimestamp",
+    "clValidatorsBalance",
+    "clPendingBalance",
+]
+
+[table.steth__contract_version_set]
+description = "`ContractVersionSet(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ContractVersionSet(uint256) event"
+
+[table.steth__contract_version_set.columns]
+version = "The `version` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__contract_version_set.footguns]
+big_ints = ["version"]
+overflows_dec = ["version"]
+
+[table.steth__deposited_post_report_updated]
+description = "`DepositedPostReportUpdated(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per DepositedPostReportUpdated(uint256) event"
+
+[table.steth__deposited_post_report_updated.columns]
+depositedPostReport = "The `depositedPostReport` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__deposited_post_report_updated.footguns]
+big_ints = ["depositedPostReport"]
+overflows_dec = ["depositedPostReport"]
+
+[table.steth__deposited_validators_changed]
+description = "`DepositedValidatorsChanged(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per DepositedValidatorsChanged(uint256) event"
+
+[table.steth__deposited_validators_changed.columns]
+depositedValidators = "The `depositedValidators` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__deposited_validators_changed.footguns]
+big_ints = ["depositedValidators"]
+overflows_dec = ["depositedValidators"]
+
+[table.steth__deposits_reserve_set]
+description = "`DepositsReserveSet(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per DepositsReserveSet(uint256) event"
+
+[table.steth__deposits_reserve_set.columns]
+depositsReserve = "The `depositsReserve` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__deposits_reserve_set.footguns]
+big_ints = ["depositsReserve"]
+overflows_dec = ["depositsReserve"]
+
+[table.steth__deposits_reserve_target_set]
+description = "`DepositsReserveTargetSet(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per DepositsReserveTargetSet(uint256) event"
+
+[table.steth__deposits_reserve_target_set.columns]
+depositsReserveTarget = "The `depositsReserveTarget` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__deposits_reserve_target_set.footguns]
+big_ints = ["depositsReserveTarget"]
+overflows_dec = ["depositsReserveTarget"]
+
+[table.steth__e_i_p712_st_e_t_h_initialized]
+description = "`EIP712StETHInitialized(address)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per EIP712StETHInitialized(address) event"
+
+[table.steth__e_i_p712_st_e_t_h_initialized.columns]
+eip712StETH = "The `eip712StETH` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__e_l_rewards_received]
+description = "`ELRewardsReceived(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ELRewardsReceived(uint256) event"
+
+[table.steth__e_l_rewards_received.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__e_l_rewards_received.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.steth__e_t_h_distributed]
+description = "`ETHDistributed(uint256,uint256,uint256,uint256,uint256,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ETHDistributed(uint256,uint256,uint256,uint256,uint256,uint256) event"
+
+[table.steth__e_t_h_distributed.columns]
+executionLayerRewardsWithdrawn = "The `executionLayerRewardsWithdrawn` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postBufferedEther = "The `postBufferedEther` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postCLBalance = "The `postCLBalance` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+preCLBalance = "The `preCLBalance` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reportTimestamp = "The `reportTimestamp` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+withdrawalsWithdrawn = "The `withdrawalsWithdrawn` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__e_t_h_distributed.footguns]
+big_ints = [
+    "reportTimestamp",
+    "preCLBalance",
+    "postCLBalance",
+    "withdrawalsWithdrawn",
+    "executionLayerRewardsWithdrawn",
+    "postBufferedEther",
+]
+overflows_dec = [
+    "reportTimestamp",
+    "preCLBalance",
+    "postCLBalance",
+    "withdrawalsWithdrawn",
+    "executionLayerRewardsWithdrawn",
+    "postBufferedEther",
+]
+
+[table.steth__external_bad_debt_internalized]
+description = "`ExternalBadDebtInternalized(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ExternalBadDebtInternalized(uint256) event"
+
+[table.steth__external_bad_debt_internalized.columns]
+amountOfShares = "The `amountOfShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__external_bad_debt_internalized.footguns]
+big_ints = ["amountOfShares"]
+overflows_dec = ["amountOfShares"]
+
+[table.steth__external_ether_transferred_to_buffer]
+description = "`ExternalEtherTransferredToBuffer(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ExternalEtherTransferredToBuffer(uint256) event"
+
+[table.steth__external_ether_transferred_to_buffer.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__external_ether_transferred_to_buffer.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.steth__external_shares_burnt]
+description = "`ExternalSharesBurnt(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ExternalSharesBurnt(uint256) event"
+
+[table.steth__external_shares_burnt.columns]
+amountOfShares = "The `amountOfShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__external_shares_burnt.footguns]
+big_ints = ["amountOfShares"]
+overflows_dec = ["amountOfShares"]
+
+[table.steth__external_shares_minted]
+description = "`ExternalSharesMinted(address,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ExternalSharesMinted(address,uint256) event"
+
+[table.steth__external_shares_minted.columns]
+amountOfShares = "The `amountOfShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+receiver = "The `receiver` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__external_shares_minted.footguns]
+big_ints = ["amountOfShares"]
+overflows_dec = ["amountOfShares"]
+
+[table.steth__internal_share_rate_updated]
+description = "`InternalShareRateUpdated(uint256,uint256,uint256,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per InternalShareRateUpdated(uint256,uint256,uint256,uint256) event"
+
+[table.steth__internal_share_rate_updated.columns]
+postInternalEther = "The `postInternalEther` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postInternalShares = "The `postInternalShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reportTimestamp = "The `reportTimestamp` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sharesMintedAsFees = "The `sharesMintedAsFees` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__internal_share_rate_updated.footguns]
+big_ints = [
+    "reportTimestamp",
+    "postInternalShares",
+    "postInternalEther",
+    "sharesMintedAsFees",
+]
+overflows_dec = [
+    "reportTimestamp",
+    "postInternalShares",
+    "postInternalEther",
+    "sharesMintedAsFees",
+]
+
+[table.steth__lido_locator_set]
+description = "`LidoLocatorSet(address)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per LidoLocatorSet(address) event"
+
+[table.steth__lido_locator_set.columns]
+lidoLocator = "The `lidoLocator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__max_external_ratio_b_p_set]
+description = "`MaxExternalRatioBPSet(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per MaxExternalRatioBPSet(uint256) event"
+
+[table.steth__max_external_ratio_b_p_set.columns]
+maxExternalRatioBP = "The `maxExternalRatioBP` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__max_external_ratio_b_p_set.footguns]
+big_ints = ["maxExternalRatioBP"]
+overflows_dec = ["maxExternalRatioBP"]
+
+[table.steth__recover_to_vault]
+description = "`RecoverToVault(address,address,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per RecoverToVault(address,address,uint256) event"
+
+[table.steth__recover_to_vault.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+token = "The `token` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+vault = "The `vault` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__recover_to_vault.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.steth__resumed]
+description = "`Resumed()` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Resumed() event"
+
+[table.steth__script_result]
+description = "`ScriptResult(address,bytes,bytes,bytes)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ScriptResult(address,bytes,bytes,bytes) event"
+
+[table.steth__script_result.columns]
+executor = "The `executor` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+input = "The `input` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+returnData = "The `returnData` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+script = "The `script` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__shares_burnt]
+description = "`SharesBurnt(address,uint256,uint256,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per SharesBurnt(address,uint256,uint256,uint256) event"
+
+[table.steth__shares_burnt.columns]
+account = "The `account` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postRebaseTokenAmount = "The `postRebaseTokenAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+preRebaseTokenAmount = "The `preRebaseTokenAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sharesAmount = "The `sharesAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__shares_burnt.footguns]
+big_ints = [
+    "preRebaseTokenAmount",
+    "postRebaseTokenAmount",
+    "sharesAmount",
+]
+overflows_dec = [
+    "preRebaseTokenAmount",
+    "postRebaseTokenAmount",
+    "sharesAmount",
+]
+
+[table.steth__staking_limit_removed]
+description = "`StakingLimitRemoved()` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakingLimitRemoved() event"
+
+[table.steth__staking_limit_set]
+description = "`StakingLimitSet(uint256,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakingLimitSet(uint256,uint256) event"
+
+[table.steth__staking_limit_set.columns]
+maxStakeLimit = "The `maxStakeLimit` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+stakeLimitIncreasePerBlock = "The `stakeLimitIncreasePerBlock` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__staking_limit_set.footguns]
+big_ints = [
+    "maxStakeLimit",
+    "stakeLimitIncreasePerBlock",
+]
+overflows_dec = [
+    "maxStakeLimit",
+    "stakeLimitIncreasePerBlock",
+]
+
+[table.steth__staking_paused]
+description = "`StakingPaused()` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakingPaused() event"
+
+[table.steth__staking_resumed]
+description = "`StakingResumed()` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per StakingResumed() event"
+
+[table.steth__stopped]
+description = "`Stopped()` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Stopped() event"
+
+[table.steth__submitted]
+description = "`Submitted(address,uint256,address)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Submitted(address,uint256,address) event"
+
+[table.steth__submitted.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+referral = "The `referral` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sender = "The `sender` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__submitted.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.steth__token_rebased]
+description = "`TokenRebased(uint256,uint256,uint256,uint256,uint256,uint256,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TokenRebased(uint256,uint256,uint256,uint256,uint256,uint256,uint256) event"
+
+[table.steth__token_rebased.columns]
+postTotalEther = "The `postTotalEther` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+postTotalShares = "The `postTotalShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+preTotalEther = "The `preTotalEther` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+preTotalShares = "The `preTotalShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reportTimestamp = "The `reportTimestamp` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sharesMintedAsFees = "The `sharesMintedAsFees` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+timeElapsed = "The `timeElapsed` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__token_rebased.footguns]
+big_ints = [
+    "reportTimestamp",
+    "timeElapsed",
+    "preTotalShares",
+    "preTotalEther",
+    "postTotalShares",
+    "postTotalEther",
+    "sharesMintedAsFees",
+]
+overflows_dec = [
+    "reportTimestamp",
+    "timeElapsed",
+    "preTotalShares",
+    "preTotalEther",
+    "postTotalShares",
+    "postTotalEther",
+    "sharesMintedAsFees",
+]
+
+[table.steth__transfer]
+description = "`Transfer(address,address,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Transfer(address,address,uint256) event"
+
+[table.steth__transfer.columns]
+from = "The `from` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+to = "The `to` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+value = "The `value` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__transfer.footguns]
+reserved_words = [
+    "from",
+    "to",
+]
+big_ints = ["value"]
+overflows_dec = ["value"]
+
+[table.steth__transfer_shares]
+description = "`TransferShares(address,address,uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TransferShares(address,address,uint256) event"
+
+[table.steth__transfer_shares.columns]
+from = "The `from` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+sharesValue = "The `sharesValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+to = "The `to` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__transfer_shares.footguns]
+reserved_words = [
+    "from",
+    "to",
+]
+big_ints = ["sharesValue"]
+overflows_dec = ["sharesValue"]
+
+[table.steth__unbuffered]
+description = "`Unbuffered(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Unbuffered(uint256) event"
+
+[table.steth__unbuffered.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__unbuffered.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[table.steth__withdrawals_received]
+description = "`WithdrawalsReceived(uint256)` events emitted by the `steth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per WithdrawalsReceived(uint256) event"
+
+[table.steth__withdrawals_received.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.steth__withdrawals_received.footguns]
+big_ints = ["amount"]
+overflows_dec = ["amount"]
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."

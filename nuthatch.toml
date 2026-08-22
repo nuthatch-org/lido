@@ -1,0 +1,27 @@
+[nest]
+name = "lido"
+chain = "mainnet"
+chain_id = 1
+# A keyless public endpoint, so this file is publishable: `nuthatch.toml` is pinned into the nest's
+# content address and must never carry a credential. It is enough to follow the tip. A *backfill*
+# needs archive depth this endpoint does not have - pass your own with `--rpc`, and check it first
+# with `nuthatch doctor --rpc <url>`.
+rpc_urls = [
+    "https://eth.drpc.org",
+]
+schema_version = 1
+block_timestamps = true
+
+# stETH sits behind an Aragon proxy, so the address below serves an implementation whose ABI the
+# proxy does not describe: resolving `0xae7a…` directly yields exactly one event, `ProxyDeposit`, and
+# a nest that decodes nothing. The EIP-1967 implementation slot is *empty* here - Aragon keeps it
+# elsewhere - so the implementation comes from `implementation()`, which answers `0x028271E3…`.
+#
+# That implementation is not verified on Sourcify. Its ABI is vendored from Blockscout, which speaks
+# the Etherscan-compatible API without requiring a key; `nuthatch init` cannot reach it today and
+# asks for `ETHERSCAN_API_KEY` instead.
+[[contracts]]
+alias = "steth"
+address = "0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
+start_block = 11473216
+abi = "abis/steth.json"

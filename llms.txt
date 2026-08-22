@@ -1,0 +1,53 @@
+# nuthatch nest on mainnet
+
+A self-hosted blockchain index. Query it locally; there is no third-party API.
+
+## Contracts
+- `steth` = 0xae7ab96520de3a18e5e111b5eaab095312d7fe84
+
+## Tables (one per contract event)
+- `steth__approval` - Approval(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, owner, spender, value)
+- `steth__c_l_balances_updated` - CLBalancesUpdated(uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, reportTimestamp, clValidatorsBalance, clPendingBalance)
+- `steth__contract_version_set` - ContractVersionSet(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, version)
+- `steth__deposited_post_report_updated` - DepositedPostReportUpdated(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, depositedPostReport)
+- `steth__deposited_validators_changed` - DepositedValidatorsChanged(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, depositedValidators)
+- `steth__deposits_reserve_set` - DepositsReserveSet(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, depositsReserve)
+- `steth__deposits_reserve_target_set` - DepositsReserveTargetSet(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, depositsReserveTarget)
+- `steth__e_i_p712_st_e_t_h_initialized` - EIP712StETHInitialized(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, eip712StETH)
+- `steth__e_l_rewards_received` - ELRewardsReceived(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, amount)
+- `steth__e_t_h_distributed` - ETHDistributed(uint256,uint256,uint256,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, reportTimestamp, preCLBalance, postCLBalance, withdrawalsWithdrawn, executionLayerRewardsWithdrawn, postBufferedEther)
+- `steth__external_bad_debt_internalized` - ExternalBadDebtInternalized(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, amountOfShares)
+- `steth__external_ether_transferred_to_buffer` - ExternalEtherTransferredToBuffer(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, amount)
+- `steth__external_shares_burnt` - ExternalSharesBurnt(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, amountOfShares)
+- `steth__external_shares_minted` - ExternalSharesMinted(address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, receiver, amountOfShares)
+- `steth__internal_share_rate_updated` - InternalShareRateUpdated(uint256,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, reportTimestamp, postInternalShares, postInternalEther, sharesMintedAsFees)
+- `steth__lido_locator_set` - LidoLocatorSet(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, lidoLocator)
+- `steth__max_external_ratio_b_p_set` - MaxExternalRatioBPSet(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, maxExternalRatioBP)
+- `steth__recover_to_vault` - RecoverToVault(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, vault, token, amount)
+- `steth__resumed` - Resumed() (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq)
+- `steth__script_result` - ScriptResult(address,bytes,bytes,bytes) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, executor, script, input, returnData)
+- `steth__shares_burnt` - SharesBurnt(address,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, account, preRebaseTokenAmount, postRebaseTokenAmount, sharesAmount)
+- `steth__staking_limit_removed` - StakingLimitRemoved() (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq)
+- `steth__staking_limit_set` - StakingLimitSet(uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, maxStakeLimit, stakeLimitIncreasePerBlock)
+- `steth__staking_paused` - StakingPaused() (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq)
+- `steth__staking_resumed` - StakingResumed() (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq)
+- `steth__stopped` - Stopped() (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq)
+- `steth__submitted` - Submitted(address,uint256,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, sender, amount, referral)
+- `steth__token_rebased` - TokenRebased(uint256,uint256,uint256,uint256,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, reportTimestamp, timeElapsed, preTotalShares, preTotalEther, postTotalShares, postTotalEther, sharesMintedAsFees)
+- `steth__transfer` - Transfer(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, from, to, value)
+- `steth__transfer_shares` - TransferShares(address,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, from, to, sharesValue)
+- `steth__unbuffered` - Unbuffered(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, amount)
+- `steth__withdrawals_received` - WithdrawalsReceived(uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, amount)
+
+## Live HTTP API (run `nuthatch dev`)
+- `GET /`                    index status
+- `GET /tables`              every table with its columns
+- `GET /table/{name}?limit=N` recent rows of one table (hot + sealed)
+- `GET /entity/{id}`         one row by id (`{block:012}-{logindex:06}`)
+- `GET /sql?q=SELECT...`     read-only SQL; each table is a view named `{alias}__{event}`
+- `GET /balances?limit=N`    top holder balances (when an ERC-20 Transfer table is present)
+- `GET /balance/{address}`   one address's derived balance
+
+## MCP (for coding agents)
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, entity,
+balance, top_balances. Fully offline against the local instance; nothing phones home.
