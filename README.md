@@ -1,6 +1,6 @@
 # lido
 
-A [nuthatch](https://github.com/nightswatchhq/nuthatch) nest: **Lido stETH on Ethereum**.
+A [nuthatch](https://github.com/nuthatch-org/nuthatch) nest: **Lido stETH on Ethereum**.
 
 Submissions, transfers, share transfers, rebases and oracle reports.
 
@@ -26,7 +26,7 @@ Indexed blocks **25,791,574 to 25,811,510** and sealed **26,280 events**. Every 
 ## Run it
 
 ```sh
-nuthatch init --from https://github.com/nightswatchhq/lido
+nuthatch init --from https://github.com/nuthatch-org/lido
 cd lido
 nuthatch dev --dir . --backfill 50000 --seal-direct
 nuthatch sql --dir . "SELECT count(*) FROM \"steth__approval\""
